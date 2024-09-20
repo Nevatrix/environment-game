@@ -6,7 +6,7 @@ void Enemigo::dibujar() {
     if (visible) {
         System::Console::ForegroundColor = System::ConsoleColor::Red;
         System::Console::SetCursorPosition(x, y); cout << caracter << caracter;
-        System::Console::SetCursorPosition(x, y+1); cout << caracter << caracter;
+        System::Console::SetCursorPosition(x, y + 1); cout << caracter << caracter;
         System::Console::ResetColor();
     }
 }

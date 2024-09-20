@@ -30,8 +30,6 @@ void Escenario::generarPosicionNoUtilizada(vector<int>& posX_usadas, vector<int>
     } while (!posicion_valida);
 
     // Agregar la nueva posición 2x2 a las listas de posiciones usadas
-    
-    
     posY_usadas.push_back(y);
     posX_usadas.push_back(x);
     posX_usadas.push_back(x + 1);
@@ -218,8 +216,6 @@ void Escenario::imp_you_win() {
     System::Console::ResetColor();
 }
 
-
-
 void Escenario::play() {
     System::Console::CursorVisible = false;
     System::Console::Clear();
@@ -281,7 +277,7 @@ void Escenario::play() {
 
     System::Console::SetCursorPosition(59, 6);
     cout << "Agua";
-    Agua* agua = new Agua(60,4);
+    Agua* agua = new Agua(60, 4);
     agua->dibujar();
 
     System::Console::SetCursorPosition(66, 6);
@@ -365,7 +361,6 @@ void Escenario::play() {
                     }
                 }
 
-
                 for (auto entidad : listaEntidades) {
                     if (verificarColision(personaje->getX(), personaje->getY(), entidad->getX(), entidad->getY())) {
                         // Colisión detectada
@@ -374,9 +369,9 @@ void Escenario::play() {
                             if (enemigo->getVisible()) {
                                 // Colisión con enemigo visible: restar una vida
                                 personaje->setVidas(personaje->getVidas() - 1);
-                                if (personaje->getY() < enemigo->getY()) { 
-                                    personaje->borrar(); 
-                                    personaje->setX(personaje->getY() - 2); 
+                                if (personaje->getY() < enemigo->getY()) {
+                                    personaje->borrar();
+                                    personaje->setX(personaje->getY() - 2);
                                 }
                                 if (personaje->getX() < enemigo->getX()) {
                                     personaje->borrar();
@@ -393,7 +388,7 @@ void Escenario::play() {
                         else if (dynamic_cast<Agua*>(entidad)) {
                             // Colisión con agua: aumentar contador de agua
                             contador_agua++;
-                            porcentaje += 0.5; 
+                            porcentaje += 0.5;
                             listaEntidades.erase(std::remove(listaEntidades.begin(), listaEntidades.end(), entidad), listaEntidades.end());
                             entidad->borrar();
                             delete entidad;
@@ -450,7 +445,7 @@ void Escenario::play() {
     else {
         imp_game_over();
     }
-    
+
     delete pers;
     delete semilla;
     delete agua;

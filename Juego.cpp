@@ -1,5 +1,4 @@
 #include "Juego.h"
-#include "conio.h"
 
 Juego::Juego() {
 	escenario = nullptr;
@@ -19,15 +18,15 @@ void Juego::Instrucciones()
 	cout << "\t2. Tu mision es restaurar el sistema contaminado." << endl;
 	cout << "\t3. Debes moverte por el mapa usando las teclas de direccion." << endl;
 	cout << "\t4. Recoge los siguientes recursos para reforestar y ganar:" << endl;
-	cout << "\t   - Agua "; 
+	cout << "\t   - Agua ";
 	System::Console::ForegroundColor = System::ConsoleColor::Blue;
-	cout << "~~"; System::Console::ResetColor(); 
+	cout << "~~"; System::Console::ResetColor();
 	cout << ": Necesaria para regar las semillas." << endl;
 	System::Console::ForegroundColor = System::ConsoleColor::Blue;
 	cout << "\t          ~~" << endl; System::Console::ResetColor();
-	cout << "\t   - Semillas "; 
+	cout << "\t   - Semillas ";
 	System::Console::ForegroundColor = System::ConsoleColor::Green;
-	cout << "**"; 
+	cout << "**";
 	System::Console::ResetColor();
 	cout << ": Usadas para plantar los arboles." << endl;
 	System::Console::ForegroundColor = System::ConsoleColor::Green;
@@ -40,7 +39,7 @@ void Juego::Instrucciones()
 	System::Console::ForegroundColor = System::ConsoleColor::DarkYellow;
 	cout << "\t             **" << endl; System::Console::ResetColor();
 	cout << "\t   - Residuos Reciclables ";
-	System::Console::ForegroundColor = System::ConsoleColor::DarkGray;  
+	System::Console::ForegroundColor = System::ConsoleColor::DarkGray;
 	cout << "##";
 	System::Console::ResetColor();
 	cout << ": Para limpiar el ambiente." << endl;
@@ -48,8 +47,8 @@ void Juego::Instrucciones()
 	cout << "\t                          ##" << endl; System::Console::ResetColor();
 	cout << "\t5. Evita las fuentes de contaminacion, que son los enemigos ";
 	System::Console::ForegroundColor = System::ConsoleColor::Red;
-	cout << "XX." << endl;
-	cout << "\t                                                            XX." << endl; System::Console::ResetColor();
+	cout << "XX" << endl;
+	cout << "\t                                                            XX" << endl; System::Console::ResetColor();
 	cout << "\t6. Perderas una vida si chocas con uno de ellos." << endl;
 	cout << "\t7. Reforesta el 70% del mapa antes de que termine el tiempo para ganar." << endl;
 	cout << "\t8. Si pierdes todas las vidas o se agota el tiempo, perderas el juego." << endl;
@@ -180,7 +179,7 @@ void Juego::menu() {
 		System::Console::SetCursorPosition(x, y + 9);
 		cout << "Angel Villarreal (U202417857), Elias Ramos(U20201A277), Joel Mora(U20241B227)";
 		System::Console::SetCursorPosition(x + 15, y + 10);
-		cout << "©2024 WeedMaster. Todos los derechos reservados.";
+		cout << " 2024 WeedMaster. Todos los derechos reservados.";
 		System::Console::SetCursorPosition(x + 25, y + 4);
 		cout << "Seleccione una opcion: ";
 		cin >> opc;
@@ -198,5 +197,4 @@ void Juego::menu() {
 			break;
 		}
 	} while (opc != 9);
-
 }
